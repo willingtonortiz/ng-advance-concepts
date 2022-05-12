@@ -1,0 +1,18 @@
+<div>
+  <ng-container *ngFor="let item of items">
+    <div (click)="selectOption(item)">
+      <ng-container
+        *ngTemplateOutlet="
+          itemTemplate ? itemTemplate : defaultItemTemplate;
+          context: { item: this.item }
+        "
+      ></ng-container>
+    </div>
+  </ng-container>
+</div>
+
+<ng-template #defaultItemTemplate let-item="item">
+  <div class="item">
+    <p>{{ item.label }}</p>
+  </div>
+</ng-template>

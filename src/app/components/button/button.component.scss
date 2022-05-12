@@ -1,0 +1,13 @@
+:host {
+  --background-color: #323232;
+  --color: #ffffff;
+
+  display: block;
+  background-color: var(--background-color);
+  color: var(--color);
+
+  padding: 8px;
+
+  border: none;
+  border-radius: 7px;
+}
