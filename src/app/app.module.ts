@@ -12,8 +12,10 @@ import { PageComponent } from './components/page/page.component';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
 import { PageFooterComponent } from './components/page-footer/page-footer.component';
 import { PageContentComponent } from './components/page-content/page-content.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   declarations: [
     AppComponent,
     ButtonComponent,
@@ -24,13 +26,9 @@ import { PageContentComponent } from './components/page-content/page-content.com
     PageComponent,
     PageHeaderComponent,
     PageFooterComponent,
-    PageContentComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
+    PageContentComponent,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

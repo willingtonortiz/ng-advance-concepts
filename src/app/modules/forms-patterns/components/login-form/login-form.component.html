@@ -1,0 +1,32 @@
+<form [formGroup]="form.asFormGroup">
+  <label for="username">Username</label>
+  <input type="text" id="username" name="username" formControlName="username" />
+
+  <label for="password">Password</label>
+  <input
+    type="password"
+    id="password"
+    name="password"
+    formControlName="password"
+  />
+
+  <button
+    type="submit"
+    [clickEvent]="actions.loginButtonClicked"
+    [disabled]="!(canLogin$ | async)"
+  >
+    Login
+  </button>
+
+  <button
+    type="button"
+    [clickEvent]="actions.resetButtonClicked"
+    [disabled]="isLoading$ | async"
+  >
+    Reset
+  </button>
+
+  <ng-container *ngIf="isLoading$ | async">
+    <p>Cargando</p>
+  </ng-container>
+</form>

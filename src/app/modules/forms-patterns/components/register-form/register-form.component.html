@@ -1,0 +1,51 @@
+<form [formGroup]="form.asFormGroup">
+  <label for="username">Username</label>
+  <input
+    type="text"
+    id="username"
+    name="username"
+    placeholder="Username"
+    formControlName="username"
+  />
+  <br />
+
+  <label>Email</label>
+  <input
+    type="email"
+    id="email"
+    name="email"
+    placeholder="Email"
+    formControlName="email"
+  />
+  <br />
+
+  <label for="password">Password</label>
+  <input
+    type="password"
+    id="password"
+    name="password"
+    placeholder="Password"
+    formControlName="password"
+  />
+  <br />
+
+  <label for="confirmPassword">Confirm Password</label>
+  <input
+    type="password"
+    id="confirmPassword"
+    name="confirmPassword"
+    placeholder="Confirm Password"
+    formControlName="confirmPassword"
+  />
+  <br />
+
+  <button
+    type="button"
+    [clickEvent]="actions.submitButtonClick"
+    [disabled]="!(isValid$ | async)"
+  >
+    Register
+  </button>
+
+  <button type="button" [clickEvent]="actions.resetButtonClick">Reset</button>
+</form>
